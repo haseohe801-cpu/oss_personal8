@@ -6,6 +6,7 @@ export default function CourseList() {
   // [제공] 초기 배열을 useState로 관리합니다.
   const [courses, setCourses] = useState(initialCourses);
   const [newName, setNewName] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
 
   // [제공] 삭제 기능: filter로 새 배열을 만들어 업데이트합니다.
   function handleDelete(id) {
@@ -51,14 +52,19 @@ export default function CourseList() {
     );
   }
 
- //  추가 기능: 검색/필터
-const categories = ["전체", ...new Set(courses.map((course) => course.category))]
+  // 추가 기능: 검색 + 완료/미완료 필터
+  const filteredCourses = courses.filter((course) => {
+    const matchName = course.name.toLowerCase().includes(search.trim().toLowerCase());
 
-const filteredCourses = courses.filter((course) => {
-  const matchName = course.name.toLowerCase().includes(newName.toLowerCase());
-  const matchCategory = filterCategory === "전체" || course.category === filterCategory;
-  const doneCount = courses.filter((course) => course.completed).length;
-});
+    const matchStatus =
+      statusFilter === "all" ||
+      (statusFilter === "done" && course.completed) ||
+      (statusFilter === "progress" && !course.completed);
+
+    return matchName && matchStatus;
+  });
+
+const doneCount = courses.filter((course) => course.completed).length;
 
   return (
     <>
@@ -96,20 +102,43 @@ const filteredCourses = courses.filter((course) => {
             + Add Course
           </button>
         </form>
+        <div className="tools">
+          <input
+            className="input"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder="과목명 검색"
+            aria-label="과목 검색"
+          />
+          <select
+            className="input select"
+            value={statusFilter}
+            onChange={(event) => setStatusFilter(event.target.value)}
+            aria-label="완료 상태 필터"
+          >
+            <option value="all">전체</option>
+            <option value="done">완료</option>
+            <option value="progress">진행 중</option>
+          </select>
+        </div>
         <div className="list-head">
           <span>COURSE</span>
           <span>CATEGORY</span>
           <span>ACTIONS</span>
         </div>
         {courses.length === 0 && (
-          <div className="empty">등록된 과목이 없습니다.</div>
+          <div className="empty">empty</div>
         )}
-        {courses.map((course) => (
+        {courses.length > 0 && filteredCourses.length === 0 && (
+          <div className="empty">empty</div>
+        )}
+        {filteredCourses.map((course) => (
           <CourseItem
             key={course.id}
             course={course}
             onDelete={handleDelete}
             onToggle={handleToggle}
+            onEdit={handleEdit}
           />
         ))}
       </section>
