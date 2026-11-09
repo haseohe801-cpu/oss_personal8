@@ -1,5 +1,41 @@
 // [제공] 부모 CourseList로부터 Props를 전달받는 자식 컴포넌트입니다.
-export default function CourseItem({ course, onDelete, onToggle }) {
+import React from "react";
+
+export default function CourseItem({ course, onDelete, onToggle, onEdit }) {
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedName, setEditedName] = useState(course.name);
+
+  const startEdit = () => {
+    setEditedName(course.name);
+    setIsEditing(true);
+  }
+
+  function startEdit() {
+    const name = editedName.trim();
+    if (name === "") return;
+    onEdit(course.id, name);
+    setIsEditing(false);
+  }
+
+  function saveEdit() {
+    const name = editedName.trim();
+    if (name === "") return;
+    onEdit(course.id, name);
+    setIsEditing(false);
+  }
+
+  function cancelEdit() {
+    setIsEditing(false);
+  }
+
+  function hnasdleKeyDown(event) {
+    if (event.key === "Enter") 
+      saveEdit();
+    if (event.key === "Escape") 
+      cancelEdit();
+  }
+
   return (
     <div className="course-row">
       <div className="course-main">
