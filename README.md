@@ -72,8 +72,8 @@ setCourses((previous) => previous.filter((course) => course.id !== id));
    App.css\_.btn.primary부분에 있는 색을 노랑으로 변경하였다.
    App.css\_.btn.primary부분에서 마우스를 올려놓으면 둥둥 떠다니는 모션을 추가하였다.
    keyframes, media, hover 추가
-3. `CourseList.jsx`의 **TODO 1**: 과목 등록 (빈 값 입력 방지, 고유 id 지정, State 업데이트).
-4. `CourseList.jsx`의 **TODO 2**: 완료 체크박스 클릭 시 `completed` 상태 변경.
+3. `CourseList.jsx`의 **TODO 1**: 과목 등록 (빈 값 입력 방지, 고유 id 지정, State 업데이트). [완료]
+4. `CourseList.jsx`의 **TODO 2**: 완료 체크박스 클릭 시 `completed` 상태 변경.[완료]
 5. 선택: 검색/필터, 이름 수정 기능 추가.
 6. GitHub에 Commit/Push 후 Vercel에 배포합니다. [완료]
 7. README에 프로젝트 소개, 주요 코드 분석 2개, 변경 내용, Weekly Review, GitHub URL, Vercel URL을 정리합니다.
