@@ -87,9 +87,14 @@ setCourses((previous) => previous.filter((course) => course.id !== id));
 ## 확인할 질문
 
 - `CourseList`와 `CourseItem`의 역할은?
+  CourseList는 courses, 삭제, 등록, 토글로직을 관리하는 부모이다. CourseItem은 Props로 받은걸 출력하고 이벤트 발생 시 콜백을 요청한다.
 - 왜 `courses`를 직접 수정하지 않고 `setCourses()`를 사용할까요?
+  react는 새로운 리스트가 들어와야 상태가 바뀐것을 안다. 직접 수정 -> 화면 갱신 이 안된다.
 - `map()`과 `filter()`는 각각 어떤 목적인가요?
+  map은 배열을 변환할때 쓰고 filter는 조건에 맞는 리스트를 남길 때 쓴다.
 - `course`, `onDelete`, `onToggle` Props는 어디에서 전달되나요?
+  CourseList에서 CourseItem을 처리하면서 course, onDelete, onToggle을 전달한다.
 - 브라우저 새로고침 시 데이터가 초기화되는 이유는? (DB/localStorage 없음)
+  데이터가 state에만 있고 DB/localStorage에 저장되지 않았기 때문이다.
 
 > 교육 목적의 로컬 State 앱입니다. 서버 API 및 데이터베이스는 사용하지 않습니다.
