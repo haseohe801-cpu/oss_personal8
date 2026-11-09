@@ -5,16 +5,16 @@ export default function App() {
     <main className="page">
       <header className="hero">
         <div>
-          <p className="topline">OPEN SOURCE STUDIO · WEEK 11</p>
-          <h1>My Course Manager</h1>
-          <p className="subtitle">React Component, Props & State Practice</p>
+          <p className="topline">Ori and the blind forest</p>
+          <h1>Ori is love!</h1>
+          <p className="subtitle">There is no one anywhere who fully interprets or understands ORI.</p>
         </div>
-        <span className="tag">STUDENT STARTER</span>
+        <span className="tag">Ori and wisps</span>
       </header>
       <CourseList />
       <footer className="bottom">
-        <span>OSS Week 11 · React</span>
-        <span>Local state only · Refresh resets data</span>
+        <span>ORI has created a perfect beauty that does not otherwise exist in the world.</span>
+        <span>This is my another assignment XD</span>
       </footer>
     </main>
   );

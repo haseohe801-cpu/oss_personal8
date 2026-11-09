@@ -64,12 +64,18 @@ setCourses((previous) => previous.filter((course) => course.id !== id));
 
 ## 수행 내용
 
-1. 코드를 실행하고 목록 조회·삭제를 확인합니다.
-2. 초기 과목 5개 이상, 제목, CSS 3곳 이상 변경합니다.
+1. 코드를 실행하고 목록 조회·삭제를 확인합니다. [완료]
+2. 초기 과목 5개 이상, 제목, CSS 3곳 이상 변경합니다. [완료]
+   courses.js*초기과목을 5개에서 7개로 늘렸고, 실제로 듣는 과목으로 변경을 하였다.
+   App.jsx*제목과 그 주변에 있는 글, 그리고 footer를 변경하였다.
+   App.css\*check부분에 있는 색을 노랑으로 변경하였다.
+   App.css\_.btn.primary부분에 있는 색을 노랑으로 변경하였다.
+   App.css\_.btn.primary부분에서 마우스를 올려놓으면 둥둥 떠다니는 모션을 추가하였다.
+   keyframes, media, hover 추가
 3. `CourseList.jsx`의 **TODO 1**: 과목 등록 (빈 값 입력 방지, 고유 id 지정, State 업데이트).
 4. `CourseList.jsx`의 **TODO 2**: 완료 체크박스 클릭 시 `completed` 상태 변경.
 5. 선택: 검색/필터, 이름 수정 기능 추가.
-6. GitHub에 Commit/Push 후 Vercel에 배포합니다.
+6. GitHub에 Commit/Push 후 Vercel에 배포합니다. [완료]
 7. README에 프로젝트 소개, 주요 코드 분석 2개, 변경 내용, Weekly Review, GitHub URL, Vercel URL을 정리합니다.
 
 ## 확인할 질문
