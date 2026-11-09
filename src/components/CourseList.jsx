@@ -56,7 +56,7 @@ const categories = ["전체", ...new Set(courses.map((course) => course.category
 
 const filteredCourses = courses.filter((course) => {
   const matchName = course.name.toLowerCase().includes(newName.toLowerCase());
-  const matchCategory = selectedCategory === "전체" || course.category === selectedCategory;
+  const matchCategory = filterCategory === "전체" || course.category === filterCategory;
   const doneCount = courses.filter((course) => course.completed).length;
 });
 
