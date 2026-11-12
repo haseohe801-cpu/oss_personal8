@@ -74,7 +74,7 @@ setCourses((previous) => previous.filter((course) => course.id !== id));
    keyframes, media, hover 추가
 3. `CourseList.jsx`의 **TODO 1**: 과목 등록 (빈 값 입력 방지, 고유 id 지정, State 업데이트). [완료]
 4. `CourseList.jsx`의 **TODO 2**: 완료 체크박스 클릭 시 `completed` 상태 변경.[완료]
-5. 선택: 검색/필터, 이름 수정 기능 추가. [완료]
+5. 선택: 검색/필터, 이름 수정 기능 추가. [3개 모두 완료]
 6. GitHub에 Commit/Push 후 Vercel에 배포합니다. [완료]
 7. README에 프로젝트 소개(done), 주요 코드 분석 2개(done), 변경 내용(done), Weekly Review(done), GitHub URL, Vercel URL을 정리합니다. [완료]
    프로젝트 소개\_이 프로젝트는 자신의 todo 리스트를 작성하는 기능이 담겨 있다. 할일을 적어서 리스트에 추가할 수 있으며, 그 일이 현재 진행 중인지, 끝났는지를 체크할 수 있다.
